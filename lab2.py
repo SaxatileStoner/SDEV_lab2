@@ -227,36 +227,37 @@ def gen_password():
 def __main__():
 
     print("Hello, Welcome to the Lab 2 Program! Please make a selection from the below menu:")
-    print_menu()
-    user_selection = input()
-    while not validate_single_user_input(user_selection):
-        print("\tNot a Valid Selection!\n")
+    while True:
         print_menu()
         user_selection = input()
+        while not validate_single_user_input(user_selection):
+            print("\tNot a Valid Selection!\n")
+            print_menu()
+            user_selection = input()
 
-    # User input has been validated to be
-    # one of the allowed options.
-    if option[0] == user_selection:
-        # Perform function for a
-        print(f"Your password is: {gen_password()}")
-    elif option[1] == user_selection:
-        # Perform function for b
-        print("temp")
-    elif option[2] == user_selection:
-        # Perform function for c
-        print("temp")
-    elif option[3] == user_selection:
-        # Perform function for d
-        print("temp")
-    elif option[4] == user_selection:
-        # Perform function for e
-        print("temp")
-    elif option[5] == user_selection:
-        # Perform function for f
-        print("\tGoodbye!")
-        return 0
-    else:
-        print("Error! Well, don't know how you got here?")
+        # User input has been validated to be
+        # one of the allowed options.
+        if option[0] == user_selection:
+            # Perform function for a
+            print(f"Your password is: {gen_password()}\n")
+        elif option[1] == user_selection:
+            # Perform function for b
+            print("temp")
+        elif option[2] == user_selection:
+            # Perform function for c
+            print("temp")
+        elif option[3] == user_selection:
+            # Perform function for d
+            print("temp")
+        elif option[4] == user_selection:
+            # Perform function for e
+            print("temp")
+        elif option[5] == user_selection:
+            # Perform function for f
+            print("\tGoodbye!")
+            return 0
+        else:
+            print("Error! Well, don't know how you got here?")
 
 
 __main__()
