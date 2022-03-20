@@ -13,11 +13,14 @@
 *       f. Exit program
 """
 
-from calendar import month
+from calendar import calendar, month, monthrange
+from hashlib import new
+from multiprocessing.sharedctypes import Value
 import secrets
 import math
 import random
 import datetime
+from sqlite3 import Date
 import string
 
 from pip import main
@@ -280,6 +283,23 @@ def calc_days_between():
         except ValueError:
             print("MUST be an integer value!")
 
+    # Need to calculate min and max range for days given the year and month
+    min_days = monthrange(year, month)[0]
+    max_days = monthrange(year, month)[1]
+
+    print("\nInput day: ")
+    while True:
+        try:
+            day = int(input())
+            if day >= min_days and day <= max_days:
+                break
+            print(
+                f"\nNot a valid day! Must be between {min_days} - {max_days}")
+        except ValueError:
+            print("MUST be an integer value!")
+
+    user_date = datetime.date(year, month, day)
+
 
 def calc_leg_triangle():
     print("temp")
@@ -310,7 +330,7 @@ def __main__():
             print(f"{gen_percentage():.2%}\n")
         elif option[2] == user_selection:
             # Perform function for c
-            print("temp")
+            calc_days_between()
         elif option[3] == user_selection:
             # Perform function for d
             print("temp")
