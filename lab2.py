@@ -12,9 +12,7 @@
 *       e. Calculate the volume of a Right Circular Cylinder
 *       f. Exit program
 """
-from calendar import c
-from logging import exception
-from multiprocessing.sharedctypes import Value
+
 import secrets
 import math
 import random
