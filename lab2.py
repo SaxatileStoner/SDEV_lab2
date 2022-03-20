@@ -13,6 +13,7 @@
 *       f. Exit program
 """
 
+from calendar import month
 import secrets
 import math
 import random
@@ -256,7 +257,29 @@ def gen_percentage():
 
 
 def calc_days_between():
-    print("temp")
+    print("\nInput year: ")
+    while True:
+        try:
+            year = int(input())
+            if year <= datetime.MAXYEAR and year >= datetime.MINYEAR{
+                break
+            }
+            print(
+                f"\nNot a valid year! Must be between {datetime.MINYEAR} - {datetime.MAXYEAR}")
+            continue
+        except ValueError:
+            print("MUST be an integer value!")
+            continue
+
+    print("\nInput month: ")
+    while True:
+        try:
+            month = int(input())
+            if month >= 1 and month <= 12:
+                break
+            print("\nNot a valid month! Must be between 1 - 12")
+        except ValueError:
+            print("MUST be an integer value!")
 
 
 def calc_leg_triangle():
