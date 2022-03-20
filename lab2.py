@@ -261,9 +261,8 @@ def calc_days_between():
     while True:
         try:
             year = int(input())
-            if year <= datetime.MAXYEAR and year >= datetime.MINYEAR{
+            if year <= datetime.MAXYEAR and year >= datetime.MINYEAR:
                 break
-            }
             print(
                 f"\nNot a valid year! Must be between {datetime.MINYEAR} - {datetime.MAXYEAR}")
             continue
