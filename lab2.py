@@ -108,7 +108,10 @@ def print_password_menu():
 
 
 def gen_password():
-    """Promts user for the length of the password as well as complexity (Use of Upper, Lower, Numbers, and Special Characters)
+    """Generates a password through a series of promts
+
+    Returns:
+        str: Password
     """
     acceptable = ['a', 'b', 'c', 'd']
     print("\nWelcome to the password generator Python application!\n" +
@@ -222,6 +225,12 @@ def gen_password():
 
 
 def gen_percentage():
+    """Divide by promtted numerator and denominator, can use 
+    return to format as a percent
+
+    Returns:
+        float: Quotient of numerator and denominator
+    """
     print("\nInput your numerator: ")
     while True:
         try:
