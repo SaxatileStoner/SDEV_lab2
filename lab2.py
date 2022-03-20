@@ -91,10 +91,6 @@ def process_array_input(user_input):
     return user_input
 
 
-def has_punctuation(str):
-    return str.__contains__(string.punctuation)
-
-
 def print_menu():
     """Prints out menu option for the user to select
     """
