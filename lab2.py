@@ -246,6 +246,18 @@ def gen_percentage():
     return numerator/denominator
 
 
+def calc_days_between():
+    print("temp")
+
+
+def calc_leg_triangle():
+    print("temp")
+
+
+def calc_vol_circular_cylinder():
+    print("temp")
+
+
 def __main__():
 
     print("Hello, Welcome to the Lab 2 Program! Please make a selection from the below menu:")
