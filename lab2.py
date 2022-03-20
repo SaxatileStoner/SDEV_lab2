@@ -105,7 +105,6 @@ def print_password_menu():
           "b. Must use a lowercase letter\n" +
           "c. Must use a number (0-9) character\n" +
           "d. Must use a special character\n")
-    # NOTE, could make a default e. option
 
 
 def gen_password():
@@ -222,6 +221,31 @@ def gen_password():
     return password
 
 
+def gen_percentage():
+    print("\nInput your numerator: ")
+    while True:
+        try:
+            numerator = float(input())
+            break
+        except ValueError:
+            print("MUST be a float value!")
+            continue
+
+    print("\nInput your denominator: ")
+    while True:
+        try:
+            denominator = float(input())
+            if denominator == 0:
+                print("Denominator CANNOT be 0!")
+                continue
+            break
+        except ValueError:
+            print("MUST be a float value!")
+            continue
+
+    return numerator/denominator
+
+
 def __main__():
 
     print("Hello, Welcome to the Lab 2 Program! Please make a selection from the below menu:")
@@ -240,7 +264,7 @@ def __main__():
             print(f"Your password is: {gen_password()}\n")
         elif option[1] == user_selection:
             # Perform function for b
-            print("temp")
+            print(f"{gen_percentage():.2%}\n")
         elif option[2] == user_selection:
             # Perform function for c
             print("temp")
