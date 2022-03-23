@@ -17,6 +17,7 @@ import secrets
 import math
 import datetime
 import string
+from xml.etree.ElementTree import PI
 
 global option
 option = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -306,8 +307,31 @@ def calc_leg_triangle():
 
 def calc_vol_circular_cylinder():
     """Finds the volume in measurements of units of a right circular cylinder
-    V = pi*r^2 * Height
+    V = (pi*r^2) * Height
     """
+    print("\nVolume of Circular Cylinder = (pi*r^2) * h")
+    # We need to aquire values r and height from the user
+    while True:
+        try:
+            r = float(input("\nEnter Value for 'Radius': "))
+            if r > 0:
+                break
+            print("\nValue 'Radius' MUST be greater than 0!")
+            continue
+        except ValueError:
+            print("Value 'Radius' MUST be a float value type!")
+
+    while True:
+        try:
+            h = float(input("\nEnter Value for 'Height': "))
+            if h > 0:
+                break
+            print("\nValue 'Height' MUST be greater than 0!")
+            continue
+        except ValueError:
+            print("Value 'Height' MUST be a float value type!")
+
+    return (math.pi * math.pow(r, 2)) * h
 
 
 def __main__():
@@ -337,7 +361,8 @@ def __main__():
             print(f"Value for Side C is: {calc_leg_triangle():.3}\n")
         elif option[4] == user_selection:
             # Perform function for e
-            print("temp")
+            print(
+                f"Volume of Circular Cylinder = {calc_vol_circular_cylinder():.3}\n")
         elif option[5] == user_selection:
             # Perform function for f
             print("\tGoodbye!")
