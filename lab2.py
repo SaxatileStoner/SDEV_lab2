@@ -17,7 +17,6 @@ import secrets
 import math
 import datetime
 import string
-from xml.etree.ElementTree import PI
 
 global option
 option = ['a', 'b', 'c', 'd', 'e', 'f']
