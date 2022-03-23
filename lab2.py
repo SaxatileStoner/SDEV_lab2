@@ -13,14 +13,9 @@
 *       f. Exit program
 """
 
-from calendar import calendar, month, monthrange
-from hashlib import new
-from multiprocessing.sharedctypes import Value
 import secrets
 import math
-import random
 import datetime
-from sqlite3 import Date
 import string
 
 from pip import main
