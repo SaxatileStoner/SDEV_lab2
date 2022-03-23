@@ -260,45 +260,7 @@ def gen_percentage():
 
 
 def calc_days_between():
-    print("\nInput year: ")
-    while True:
-        try:
-            year = int(input())
-            if year <= datetime.MAXYEAR and year >= datetime.MINYEAR:
-                break
-            print(
-                f"\nNot a valid year! Must be between {datetime.MINYEAR} - {datetime.MAXYEAR}")
-            continue
-        except ValueError:
-            print("MUST be an integer value!")
-            continue
-
-    print("\nInput month: ")
-    while True:
-        try:
-            month = int(input())
-            if month >= 1 and month <= 12:
-                break
-            print("\nNot a valid month! Must be between 1 - 12")
-        except ValueError:
-            print("MUST be an integer value!")
-
-    # Need to calculate min and max range for days given the year and month
-    min_days = monthrange(year, month)[0]
-    max_days = monthrange(year, month)[1]
-
-    print("\nInput day: ")
-    while True:
-        try:
-            day = int(input())
-            if day >= min_days and day <= max_days:
-                break
-            print(
-                f"\nNot a valid day! Must be between {min_days} - {max_days}")
-        except ValueError:
-            print("MUST be an integer value!")
-
-    user_date = datetime.date(year, month, day)
+    return datetime.date(2025, 7, 4) - datetime.date.today()
 
 
 def calc_leg_triangle():
@@ -345,4 +307,4 @@ def __main__():
             print("Error! Well, don't know how you got here?")
 
 
-__main__()
+calc_days_between()
