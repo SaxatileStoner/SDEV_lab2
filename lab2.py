@@ -264,7 +264,40 @@ def calc_days_between():
 
 
 def calc_leg_triangle():
-    print("temp")
+    print("\nThe Law of Cosines: c^2 = a^2 + b^2 - 2ab*cos(C)")
+    # We need to get a, b, and big C from the user
+    while True:
+        try:
+            a = float(input("\nEnter Value for 'Side A': "))
+            if a > 0:
+                break
+            print("\nValue 'Side A' MUST be greater than 0!")
+            continue
+        except ValueError:
+            print("Value 'Side A' MUST be a float value type!")
+
+    while True:
+        try:
+            b = float(input("\nEnter Value for 'Side B': "))
+            if b > 0:
+                break
+            print("\nValue 'Side B' MUST be greater than 0!")
+            continue
+        except ValueError:
+            print("Value 'Side B' MUST be a float value type!")
+
+    while True:
+        try:
+            C = float(input("\nEnter Value for 'Angle C': "))
+            if C > 0:
+                break
+            print("\nValue 'Angle C' MUST be greater than 0!")
+            continue
+        except ValueError:
+            print("Value 'Angle C' MUST be a float value type!")
+
+    return math.sqrt(math.pow(a, 2) + math.pow(b, 2) -
+                     2*a*b*math.cos(math.radians(C)))
 
 
 def calc_vol_circular_cylinder():
@@ -295,7 +328,7 @@ def __main__():
             print(f"Days until 4 July, 2025: {calc_days_between()}\n")
         elif option[3] == user_selection:
             # Perform function for d
-            print("temp")
+            print(f"Value for Side C is: {calc_leg_triangle():.3}\n")
         elif option[4] == user_selection:
             # Perform function for e
             print("temp")
