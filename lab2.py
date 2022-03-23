@@ -18,12 +18,12 @@ import math
 import datetime
 import string
 
-global option
-option = ['a', 'b', 'c', 'd', 'e', 'f']
+global OPTION
+OPTION = ['a', 'b', 'c', 'd', 'e', 'f']
 # default option array
 
 
-def validate_single_user_input(user_input, acceptable=option):
+def validate_single_user_input(user_input, acceptable=OPTION):
     """Used to check if the user has made a SINGLE valid choice with the printed menu
 
     Args:
@@ -40,7 +40,7 @@ def validate_single_user_input(user_input, acceptable=option):
     return False
 
 
-def validate_array_user_input(user_input, acceptable=option):
+def validate_array_user_input(user_input, acceptable=OPTION):
     """Used to check if the user has made a valid ARRAY of choices with the printed menu
 
     Args:
@@ -66,16 +66,16 @@ def validate_array_user_input(user_input, acceptable=option):
 
 
 def process_array_input(user_input):
-    """Puts a user's str input into a list that is seperated 
-    by whitespace into a list, strips the whitespace, 
+    """Puts a user's str input into a list that is seperated
+    by whitespace into a list, strips the whitespace,
     removes repeats, and sorts the list alphabetically
 
     Args:
-        user_input (str): string to be operated on 
+        user_input (str): string to be operated on
         and returned
 
     Returns:
-        list: stripped, removed repeats, and sortted list 
+        list: stripped, removed repeats, and sortted list
         from user_input
     """
     user_input = list(user_input)  # Convert str to list
@@ -98,6 +98,8 @@ def print_menu():
 
 
 def print_password_menu():
+    """Prints the password menu
+    """
     print("\na. Must use an UPPERCASE letter\n" +
           "b. Must use a lowercase letter\n" +
           "c. Must use a number (0-9) character\n" +
@@ -132,9 +134,8 @@ def gen_password():
             pass_len = int(input())
             if pass_len >= 8 and pass_len <= 256:
                 break  # The user input is a valid int AND is between 8-256 characters
-            else:
-                print("\nMUST be between 8-256 characters!")
-                continue
+            print("\nMUST be between 8-256 characters!")
+            continue
         except ValueError:
             print("\nThat is NOT a valid integer!")
             continue
@@ -222,7 +223,7 @@ def gen_password():
 
 
 def gen_percentage():
-    """Divide by promtted numerator and denominator, can use 
+    """Divide by promtted numerator and denominator, can use
     return to format as a percent
 
     Returns:
@@ -346,23 +347,23 @@ def __main__():
 
         # User input has been validated to be
         # one of the allowed options.
-        if option[0] == user_selection:
+        if OPTION[0] == user_selection:
             # Perform function for a
             print(f"Your password is: {gen_password()}\n")
-        elif option[1] == user_selection:
+        elif OPTION[1] == user_selection:
             # Perform function for b
             print(f"{gen_percentage():.2%}\n")
-        elif option[2] == user_selection:
+        elif OPTION[2] == user_selection:
             # Perform function for c
             print(f"Days until 4 July, 2025: {calc_days_between()}\n")
-        elif option[3] == user_selection:
+        elif OPTION[3] == user_selection:
             # Perform function for d
             print(f"Value for Side C is: {calc_leg_triangle():.3}\n")
-        elif option[4] == user_selection:
+        elif OPTION[4] == user_selection:
             # Perform function for e
             print(
                 f"Volume of Circular Cylinder = {calc_vol_circular_cylinder():.3}\n")
-        elif option[5] == user_selection:
+        elif OPTION[5] == user_selection:
             # Perform function for f
             print("\tGoodbye!")
             return 0
