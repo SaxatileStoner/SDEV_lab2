@@ -13,10 +13,14 @@
 *       f. Exit program
 """
 
+from calendar import calendar, month, monthrange
+from hashlib import new
+from multiprocessing.sharedctypes import Value
 import secrets
 import math
 import random
 import datetime
+from sqlite3 import Date
 import string
 
 from pip import main
@@ -256,7 +260,7 @@ def gen_percentage():
 
 
 def calc_days_between():
-    print("temp")
+    return datetime.date(2025, 7, 4) - datetime.date.today()
 
 
 def calc_leg_triangle():
@@ -288,7 +292,7 @@ def __main__():
             print(f"{gen_percentage():.2%}\n")
         elif option[2] == user_selection:
             # Perform function for c
-            print("temp")
+            print(f"Days until 4 July, 2025: {calc_days_between()}\n")
         elif option[3] == user_selection:
             # Perform function for d
             print("temp")
