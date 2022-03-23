@@ -292,7 +292,7 @@ def __main__():
             print(f"{gen_percentage():.2%}\n")
         elif option[2] == user_selection:
             # Perform function for c
-            calc_days_between()
+            print(f"Days until 4 July, 2025: {calc_days_between()}\n")
         elif option[3] == user_selection:
             # Perform function for d
             print("temp")
@@ -307,4 +307,4 @@ def __main__():
             print("Error! Well, don't know how you got here?")
 
 
-calc_days_between()
+__main__()
