@@ -11,6 +11,8 @@
 *       d. Use the Law of Cosines to calculate the leg of a triangle.
 *       e. Calculate the volume of a Right Circular Cylinder
 *       f. Exit program
+* TODO, Document testing result into test_cases_pylint.docx
+* TODO, Run Pylint an make any needed changes after running
 """
 
 import secrets
@@ -273,8 +275,8 @@ def calc_leg_triangle():
     # We need to get a, b, and big C from the user
     while True:
         try:
-            a = float(input("\nEnter Value for 'Side A': "))
-            if a > 0:
+            side_a = float(input("\nEnter Value for 'Side A': "))
+            if side_a > 0:
                 break
             print("\nValue 'Side A' MUST be greater than 0!")
             continue
@@ -283,8 +285,8 @@ def calc_leg_triangle():
 
     while True:
         try:
-            b = float(input("\nEnter Value for 'Side B': "))
-            if b > 0:
+            side_b = float(input("\nEnter Value for 'Side B': "))
+            if side_b > 0:
                 break
             print("\nValue 'Side B' MUST be greater than 0!")
             continue
@@ -293,16 +295,16 @@ def calc_leg_triangle():
 
     while True:
         try:
-            C = float(input("\nEnter Value for 'Angle C': "))
-            if C > 0:
+            angle_c = float(input("\nEnter Value for 'Angle C': "))
+            if angle_c > 0:
                 break
             print("\nValue 'Angle C' MUST be greater than 0!")
             continue
         except ValueError:
             print("Value 'Angle C' MUST be a float value type!")
 
-    return math.sqrt(math.pow(a, 2) + math.pow(b, 2) -
-                     2*a*b*math.cos(math.radians(C)))
+    return math.sqrt(math.pow(side_a, 2) + math.pow(side_b, 2) -
+                     2*side_a*side_b*math.cos(math.radians(angle_c)))
 
 
 def calc_vol_circular_cylinder():
@@ -313,8 +315,8 @@ def calc_vol_circular_cylinder():
     # We need to aquire values r and height from the user
     while True:
         try:
-            r = float(input("\nEnter Value for 'Radius': "))
-            if r > 0:
+            radius = float(input("\nEnter Value for 'Radius': "))
+            if radius > 0:
                 break
             print("\nValue 'Radius' MUST be greater than 0!")
             continue
@@ -323,15 +325,15 @@ def calc_vol_circular_cylinder():
 
     while True:
         try:
-            h = float(input("\nEnter Value for 'Height': "))
-            if h > 0:
+            height = float(input("\nEnter Value for 'Height': "))
+            if height > 0:
                 break
             print("\nValue 'Height' MUST be greater than 0!")
             continue
         except ValueError:
             print("Value 'Height' MUST be a float value type!")
 
-    return (math.pi * math.pow(r, 2)) * h
+    return (math.pi * math.pow(radius, 2)) * height
 
 
 def __main__():
@@ -372,8 +374,3 @@ def __main__():
 
 
 __main__()
-
-"""
-* TODO, Document testing result into test_cases_pylint.docx
-* TODO, Run Pylint an make any needed changes after running
-"""
