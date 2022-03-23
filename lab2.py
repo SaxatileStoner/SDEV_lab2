@@ -337,7 +337,11 @@ def calc_vol_circular_cylinder():
 
 
 def __main__():
+    """Main Program to call
 
+    Returns:
+        int: returns 0 for normal function exit
+    """
     print("Hello, Welcome to the Lab 2 Program! Please make a selection from the below menu:")
     while True:
         print_menu()
