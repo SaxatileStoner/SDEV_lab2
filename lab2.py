@@ -18,8 +18,6 @@ import math
 import datetime
 import string
 
-from pip import main
-
 global option
 option = ['a', 'b', 'c', 'd', 'e', 'f']
 # default option array
@@ -255,10 +253,21 @@ def gen_percentage():
 
 
 def calc_days_between():
+    """returns the amount of days between today and 4 July 2025
+
+    Returns:
+        timedelta: Day difference between today and 4 July 2025
+    """
     return datetime.date(2025, 7, 4) - datetime.date.today()
 
 
 def calc_leg_triangle():
+    """Uses the law of cos to find the missing value of side C
+    LAW OF COS: c^2 = a^2 + b^2 - 2ab*cos(C)
+
+    Returns:
+        float: The value of side C from inputs a, b, angle c
+    """
     print("\nThe Law of Cosines: c^2 = a^2 + b^2 - 2ab*cos(C)")
     # We need to get a, b, and big C from the user
     while True:
@@ -296,7 +305,9 @@ def calc_leg_triangle():
 
 
 def calc_vol_circular_cylinder():
-    print("temp")
+    """Finds the volume in measurements of units of a right circular cylinder
+    V = pi*r^2 * Height
+    """
 
 
 def __main__():
